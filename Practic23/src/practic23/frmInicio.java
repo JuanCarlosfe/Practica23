@@ -5,6 +5,8 @@
  */
 package practic23;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kathy
@@ -53,7 +55,7 @@ public class frmInicio extends javax.swing.JFrame {
         txtDistancia1 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         txtDistancia2 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        txtRadio = new javax.swing.JTextField();
 
         jTextField1.setText("jTextField1");
 
@@ -76,12 +78,32 @@ public class frmInicio extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
 
         btnResulCir.setText("Hacer Operacion");
+        btnResulCir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResulCirActionPerformed(evt);
+            }
+        });
 
         btnResulTri.setText("Hacer Operacion");
+        btnResulTri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResulTriActionPerformed(evt);
+            }
+        });
 
         btnResulCua.setText("Hacer Operacion");
+        btnResulCua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResulCuaActionPerformed(evt);
+            }
+        });
 
         btnResulRom.setText("Hacer Operacion");
+        btnResulRom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResulRomActionPerformed(evt);
+            }
+        });
 
         lblRadio.setText("Radio");
 
@@ -103,9 +125,9 @@ public class frmInicio extends javax.swing.JFrame {
 
         jLabel15.setText("Distancia 2");
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtRadioActionPerformed(evt);
             }
         });
 
@@ -123,12 +145,14 @@ public class frmInicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(lblRadio)))
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblRadio))
+                            .addComponent(txtRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,19 +244,12 @@ public class frmInicio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblResulTri))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(lblRadio)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnResulCir)
-                                .addGap(11, 11, 11)
-                                .addComponent(lblResulCir)))
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnResulCir)
+                        .addGap(11, 11, 11)
+                        .addComponent(lblResulCir)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,7 +270,11 @@ public class frmInicio extends javax.swing.JFrame {
                         .addComponent(lblResulRom)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(133, 133, 133)
+                .addComponent(lblRadio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,9 +293,61 @@ public class frmInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRadioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtRadioActionPerformed
+
+    private void btnResulCirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResulCirActionPerformed
+        try {
+            double radio = Double.parseDouble(txtRadio.getText());
+            lblResulCir.setText(String.valueOf(3.14 * (radio * radio)));
+            txtRadio.setText("");
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERROR, INGRESE UN VALOR");
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnResulCirActionPerformed
+
+    private void btnResulTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResulTriActionPerformed
+        try {
+            double base = Double.parseDouble(txtBase.getText());
+            double altura = Double.parseDouble(txtAltura.getText());
+
+            lblResulTri.setText(String.valueOf(base * altura / 2));
+            txtBase.setText("");
+            txtAltura.setText("");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERROR, INGRESE UN VALOR");
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnResulTriActionPerformed
+
+    private void btnResulCuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResulCuaActionPerformed
+        try {
+            double lado = Double.parseDouble(txtLado.getText());
+            lblResulCua.setText(String.valueOf(Math.pow(lado, 2)));
+            txtLado.setText("");
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERROR, INGRESE UN VALOR");
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnResulCuaActionPerformed
+
+    private void btnResulRomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResulRomActionPerformed
+       try {
+            double distancia1 = Double.parseDouble(txtDistancia1.getText());
+            double distancia2 = Double.parseDouble(txtDistancia2.getText());
+
+            lblResulRom.setText(String.valueOf(distancia1 * distancia2 / 2));
+            txtDistancia1.setText("");
+            txtDistancia2.setText("");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERROR, INGRESE UN VALOR");
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_btnResulRomActionPerformed
 
     /**
      * @param args the command line arguments
@@ -328,7 +401,6 @@ public class frmInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel lblRadio;
     private javax.swing.JLabel lblResulCir;
     private javax.swing.JLabel lblResulCua;
@@ -339,5 +411,6 @@ public class frmInicio extends javax.swing.JFrame {
     private javax.swing.JTextField txtDistancia1;
     private javax.swing.JTextField txtDistancia2;
     private javax.swing.JTextField txtLado;
+    private javax.swing.JTextField txtRadio;
     // End of variables declaration//GEN-END:variables
 }
